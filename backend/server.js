@@ -27,6 +27,10 @@ function saveTodos(todos) {
 
 let todos = loadTodos();
 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
 // ---------- Routes ----------
 
 app.get("/todos", (req, res) => {
@@ -53,6 +57,8 @@ app.delete("/todos/:id", (req, res) => {
 
     res.status(204).send();
 });
+
+
 
 
 app.listen(PORT, () => {
